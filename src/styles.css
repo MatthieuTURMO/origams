@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+/* TYPOGRAPHIE GENERALE */
+
+:root {
+    --gris1: #292a2e;
+    --gris2: #707070;
+    --rouge1: #b8141f;
+    --rouge2: #9e1624;
+    --bleu: #56649d;
+}
+
+* {
+    font-family: Open Sans;
+    font-weight : 300;
+}
+
+body {
+    margin: 0;
+}
+
+.text-gris-1 {
+    color: var(--gris1);
+}
+
+.text-gris-2 {
+    color: var(--gris2);
+}
+
+.text-rouge-1 {
+    color: var(--rouge1);
+}
+
+.text-rouge-2 {
+    color: var(--rouge2);
+}
+
+.text-bleu {
+    color: var(--bleu);
+}
+
+.bg-gris-1 {
+    background-color: var(--gris1);
+}
+
+.bg-gris-2 {
+    background-color: var(--gris2);
+}
+
+.bg-rouge-1 {
+    background-color: var(--rouge1);
+}
+
+.text-rouge-2 {
+    background-color: var(--rouge2);
+}
+
+.bg-bleu {
+    background-color: var(--bleu);
+}
+
+.bold{
+    font-weight : 700 !important;
+}

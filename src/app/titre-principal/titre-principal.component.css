@@ -1,0 +1,39 @@
+.container{
+    width:100%;
+    max-width:100%;
+    box-sizing: border-box;
+    padding : 20px 40px;
+}
+
+span {
+    display: inline-block;
+    padding: 0 15px;
+    position: relative;
+    color: var(--gris1);
+    font-size : 35px;
+    font-weight: 700;
+}
+
+span:before,
+span:after {
+    background-color : var(--rouge1);
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    width: 400%;
+}
+
+span:before {
+    right: 100%;
+}
+
+span:after {
+    left: 100%;
+}
+
+.titre-principal {
+    overflow: hidden;
+    text-align: center;
+}

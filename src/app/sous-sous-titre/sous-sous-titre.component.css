@@ -1,0 +1,25 @@
+span {
+    display: inline-block;
+    padding: 0 15px;
+    position: relative;
+    color: var(--gris1);
+    font-size : 25px;
+    font-weight: 300;
+}
+
+span:after {
+    background-color : var(--rouge2);
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    width: 1000%;
+}
+span:after {
+    left: 100%;
+}
+.sous-sous-titre {
+    overflow: hidden;
+    text-align: left;
+}
