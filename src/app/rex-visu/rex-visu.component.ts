@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, HostListener, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-rex-visu',
@@ -101,9 +102,38 @@ export class RexVisuComponent implements OnInit {
     "corrections_definitives": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem fuga totam deleniti sequi itaque facilis culpa ipsam natus similique suscipit modi voluptas officiis sunt amet, vero commodi ? Enim, perferendis possimus",
   }
 
-  constructor() { }
+  //la position des div de description et de timeLine, qui servira pour mettre en fixed la div de gauche d'informations
+  private offsetTopFixed = 0;
+  private fixed: boolean = false;
+
+  @ViewChild('description')
+  private desc: ElementRef;
+
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
   ngOnInit() {
+    this.setOffset();
+    this.onWindowScroll();
+  }
+
+  //récupère la hauteur de l'écran
+  //et l'offsetTop de la div de description
+  setOffset() {
+    this.offsetTopFixed = this.desc.nativeElement.offsetTop;
+  }
+
+  //fonction qui détecte le scroll
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    this.fixed = window.pageYOffset >= this.offsetTopFixed ? true : false;
+  }
+
+  @HostListener('window:resize', [])
+  onResize() {
+    this.setOffset();
   }
 
 }

@@ -8,4 +8,5 @@ div.carte-titre {
 .content{
     padding : 12px 20px;
     font-size: var(--taille-paragraphe);
+    background-color : #fff;
 }
