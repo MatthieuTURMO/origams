@@ -1,6 +1,6 @@
 .sous-titre{
     color : white;
-    font-size: 27px;
+    font-size: var(--taille-sous-titre);
     background-color : var(--rouge2);
     width : 100%;
     height : 50px;

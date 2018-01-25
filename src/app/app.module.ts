@@ -12,6 +12,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
+import { SousSousTitre2Component } from './sous-sous-titre-2/sous-sous-titre-2.component';
+import { ParagrapheRedLineComponent } from './paragraphe-red-line/paragraphe-red-line.component';
+import { RexVisuComponent } from './rex-visu/rex-visu.component';
+import { RexTimelineVisuComponent } from './rex-timeline-visu/rex-timeline-visu.component';
+import { TableauComponent } from './tableau/tableau.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,12 @@ import { MatCardModule } from '@angular/material/card';
     SousTitreComponent,
     TitrePageComponent,
     SousSousTitreComponent,
-    NavbarComponent
+    NavbarComponent,
+    SousSousTitre2Component,
+    ParagrapheRedLineComponent,
+    RexVisuComponent,
+    RexTimelineVisuComponent,
+    TableauComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +40,8 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatCheckboxModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

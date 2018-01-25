@@ -1,0 +1,14 @@
+span {
+    display: inline-block;
+    padding: 0 ;
+    padding-right: 15px;
+    position: relative;
+    color: var(--gris1);
+    font-size : var(--taille-sous-sous-titre);
+    font-weight: 300;
+}
+
+.sous-sous-titre {
+    overflow: hidden;
+    text-align: left;
+}

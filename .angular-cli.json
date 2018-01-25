@@ -20,7 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "origami-theme.scss"
+        "origami-theme.scss",
+        "bootstrap.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

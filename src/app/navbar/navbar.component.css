@@ -3,7 +3,7 @@
     height: 84px;
     background-color: var(--rouge1);
     color: white;
-    font-size: 43px;
+    font-size: var(--taille-navbar-titre);
     line-height: 84px;
     text-align: center;
     position: relative;
@@ -29,11 +29,11 @@
     top: 0;
     left: 0;
     background-color: var(--gris1);
-    width: 200px;
+    width: 250px;
     height: 84px;
     font-weight: 600;
     color: white;
-    font-size: 27px;
+    font-size: var(--taille-navbar-origami);
     padding-left: 50px;
 }
 

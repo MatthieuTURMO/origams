@@ -6,6 +6,13 @@
     --rouge1: #b8141f;
     --rouge2: #9e1624;
     --bleu: #56649d;
+    --taille-paragraphe: 14px;
+    --taille-titre-principal: 35px;
+    --taille-navbar-titre: 43px;
+    --taille-navbar-origami: 27px;
+    --taille-titre-page: 35px;
+    --taille-sous-sous-titre: 19px;
+    --taille-sous-titre: 24px;
 }
 
 * {
@@ -59,4 +66,10 @@ body {
 
 .bold{
     font-weight : 700 !important;
+}
+
+.paragraphe {
+    padding: 0 15px;
+    font-size: var(--taille-paragraphe);;
+    margin-top: 5px;
 }

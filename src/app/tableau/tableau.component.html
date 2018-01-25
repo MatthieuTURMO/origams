@@ -1,0 +1,6 @@
+<table>
+  <th *ngFor = "let name of entete">{{ name }}</th>
+  <tr *ngFor = "let ligne of data">
+    <td *ngFor = "let key of arrayOfKeys">{{ ligne[key] }}</td>
+  </tr>
+</table>

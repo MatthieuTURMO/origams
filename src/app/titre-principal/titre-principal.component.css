@@ -1,4 +1,4 @@
-.container{
+.container-tp{
     width:100%;
     max-width:100%;
     box-sizing: border-box;
@@ -10,7 +10,7 @@ span {
     padding: 0 15px;
     position: relative;
     color: var(--gris1);
-    font-size : 35px;
+    font-size : var(--taille-titre-principal);
     font-weight: 700;
 }
 

@@ -1,0 +1,25 @@
+p {
+    display: inline-block;
+    padding: 0 15px;
+    padding-left: 55px;
+    position: relative;
+    color: var(--gris1);
+    font-size : var(--taille-paragraphe);
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+p:before {
+    background-color : var(--rouge2);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 100%;
+    width: 2px;
+}
+
+.paragraphe-red-line {
+    text-align: justify;
+}

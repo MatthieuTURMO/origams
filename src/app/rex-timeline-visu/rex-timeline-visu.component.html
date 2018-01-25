@@ -1,0 +1,7 @@
+<table>
+  <tr *ngFor = "let ligne of data; let last = last">
+    <td [ngClass]="{'vert':ligne.etat==0, 'jaune':ligne.etat==1, 'rouge':ligne.etat==2}">{{ ligne.date }}</td>
+    <td>{{ ligne.heure }}</td>
+    <td>{{ ligne.description }}</td>
+  </tr>
+</table>
