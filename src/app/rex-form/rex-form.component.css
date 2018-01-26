@@ -1,0 +1,39 @@
+tr>td:nth-child(1) {
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+#infos-div {
+    position: relative;
+    z-index: 100;
+    overflow-y: auto;
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    float: left;
+}
+
+#infos-div.fixed {
+    position: fixed;
+    top: 0;
+}
+
+#description-div {
+    float: right;
+    position: absolute;
+    width: 75%;
+    margin-left: 25%;
+}
+
+.col-67 {
+    width: 67%;
+    float: left;
+    padding-right: 10px;
+}
+
+.col-33 {
+    width: 33%;
+    float: right;
+    padding-right: 10px;
+}

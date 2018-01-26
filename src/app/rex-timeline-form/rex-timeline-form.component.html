@@ -1,0 +1,33 @@
+<table>
+  <th>Date</th>
+  <th>Heure</th>
+  <th>Description</th>
+  <th>Insertion</th>
+  <tr *ngFor="let ligne of timeline; let index = index;">
+    <td>{{ligne.date}}</td>
+    <td>{{ligne.heure}}</td>
+    <td>{{ligne.description}}</td>
+    <td>
+      <button mat-button [matMenuTriggerFor]="menu">...</button>
+      <mat-menu #menu="matMenu">
+        <button (click)="ajouterEntree(-1, index);" mat-menu-item>Insérer au-dessus</button>
+        <button (click)="ajouterEntree(1, index);" mat-menu-item>Insérer au-dessous</button>
+        <button (click)="supprimer(index)" mat-menu-item>Supprimer</button>
+      </mat-menu>
+    </td>
+  </tr>
+</table>
+
+<form *ngIf="showForm">
+  <input [(ngModel)]="nouvelleLigne.date" name="date" type="text">
+  <input [(ngModel)]="nouvelleLigne.heure" name="heure" type="text">
+  <input [(ngModel)]="nouvelleLigne.description" name="description" type="text">
+  <select name="etat" id="etat" [(ngModel)]="nouvelleLigne.etat">
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+  </select>
+  <button type="button" (click)="onSubmit()">Ajouter</button>
+</form>
+
+<button (click)="ajouterEntree(0);">Ajouter une entrée</button>

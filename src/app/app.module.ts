@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { CarteComponent } from './carte/carte.component';
@@ -18,6 +18,9 @@ import { RexVisuComponent } from './rex-visu/rex-visu.component';
 import { RexTimelineVisuComponent } from './rex-timeline-visu/rex-timeline-visu.component';
 import { TableauComponent } from './tableau/tableau.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { RexFormComponent } from './rex-form/rex-form.component';
+import { RexTimelineFormComponent } from './rex-timeline-form/rex-timeline-form.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     ParagrapheRedLineComponent,
     RexVisuComponent,
     RexTimelineVisuComponent,
-    TableauComponent
+    TableauComponent,
+    RexFormComponent,
+    RexTimelineFormComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,9 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     MatCheckboxModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    MatMenuModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

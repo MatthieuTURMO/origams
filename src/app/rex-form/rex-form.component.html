@@ -1,0 +1,126 @@
+<app-navbar>REX</app-navbar>
+<app-titre-page>Visualisation REX n° 345</app-titre-page>
+<app-titre-principal>CINKE-Programmation</app-titre-principal>
+
+<div id="infos-div" [ngClass]="{'fixed': fixed}">
+  <app-carte titre="Infos">
+    <table>
+      <tr>
+        <td>Date incident</td>
+        <td>{{ infos_data.date_incident }}</td>
+      </tr>
+      <tr>
+        <td>Date REX</td>
+        <td>{{ infos_data.date_REX }}</td>
+      </tr>
+      <tr>
+        <td>Créé par</td>
+        <td>{{ infos_data.cree_par }}</td>
+      </tr>
+      <tr>
+        <td>Fonction</td>
+        <td>{{ infos_data.fonction }}</td>
+      </tr>
+    </table>
+  </app-carte>
+
+  <app-carte titre="Dates de validation">
+    <table>
+      <tr>
+        <td>CDC</td>
+        <td>{{ dates_validation_data.cdc }}</td>
+      </tr>
+      <tr>
+        <td>Domaine</td>
+        <td>{{ dates_validation_data.domaine }}</td>
+      </tr>
+      <tr>
+        <td>Nom</td>
+        <td>{{ dates_validation_data.nom_domaine }}</td>
+      </tr>
+      <tr>
+        <td>Projet</td>
+        <td>{{ dates_validation_data.projet }}</td>
+      </tr>
+      <tr>
+        <td>Nom</td>
+        <td>{{ dates_validation_data.nom_projet }}</td>
+      </tr>
+    </table>
+  </app-carte>
+
+  <app-carte titre="Domaine/Pôle">
+    <table>
+      <tr>
+        <td>Domaine</td>
+        <td>{{ domaine_pole_data.domaine }}</td>
+      </tr>
+      <tr>
+        <td>Pôle</td>
+        <td>{{ domaine_pole_data.pole }}</td>
+      </tr>
+    </table>
+  </app-carte>
+
+  <app-carte titre="Niveau de service">
+    OK
+  </app-carte>
+
+  <app-carte titre="Indices d'opérabilité">
+    <app-sous-sous-titre>Impact</app-sous-sous-titre>
+    <span *ngFor="let impact of indices_data.impact; let last = last">{{impact}}
+      <span *ngIf="!last"> / </span>
+    </span>
+    <app-sous-sous-titre>Causalité</app-sous-sous-titre>
+    <span *ngFor="let causalite of indices_data.causalite; let last = last">{{causalite}}
+      <span *ngIf="!last"> / </span>
+    </span>
+    <app-sous-sous-titre>Autres indices</app-sous-sous-titre>
+    <table>
+      <tr>
+        <td>Nb utilisateurs</td>
+        <td>{{ indices_data.autres_indices.nb_utilisateurs }}</td>
+      </tr>
+      <tr>
+        <td>Sévérité</td>
+        <td>{{ indices_data.autres_indices.severite }}</td>
+      </tr>
+      <tr>
+        <td>Nb appels</td>
+        <td>{{ indices_data.autres_indices.nb_appels }}</td>
+      </tr>
+      <tr>
+        <td>Nb flags MySI</td>
+        <td>{{ indices_data.autres_indices.duree_incident }}</td>
+      </tr>
+      <tr>
+        <td>Fréquence</td>
+        <td>{{ indices_data.autres_indices.frequence }}</td>
+      </tr>
+    </table>
+  </app-carte>
+</div>
+
+
+<div id="description-div" #description>
+  <div class="col-67">
+    <app-carte titre="Description détaillée">
+      <app-sous-sous-titre-2>Description de l'incident</app-sous-sous-titre-2>
+      <app-paragraphe-red-line>{{ description_detaillee_data.description_incident }}</app-paragraphe-red-line>
+      <app-sous-sous-titre-2>Causes de l'incident</app-sous-sous-titre-2>
+      <app-paragraphe-red-line>{{ description_detaillee_data.causes_incident }}</app-paragraphe-red-line>
+      <app-sous-sous-titre-2>Actions de contournement</app-sous-sous-titre-2>
+      <app-paragraphe-red-line>{{ description_detaillee_data.actions_contournement }}</app-paragraphe-red-line>
+      <app-sous-sous-titre-2>Corrections définitives</app-sous-sous-titre-2>
+      <app-paragraphe-red-line>{{ description_detaillee_data.corrections_definitives }}</app-paragraphe-red-line>
+    </app-carte>
+    <app-carte titre="Capitalisation et axes d'améliorations">
+      <app-tableau [data]="capitalisation_data" [entete]="capitalisation_entete"></app-tableau>
+    </app-carte>
+  </div>
+  <div class="col-33">
+    <app-carte titre="Timeline">
+      <app-rex-timeline-form></app-rex-timeline-form>
+    </app-carte>
+  </div>
+</div>
