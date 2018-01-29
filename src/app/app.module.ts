@@ -10,7 +10,7 @@ import { TitrePageComponent } from './titre-page/titre-page.component';
 import { SousSousTitreComponent } from './sous-sous-titre/sous-sous-titre.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatIconModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { SousSousTitre2Component } from './sous-sous-titre-2/sous-sous-titre-2.component';
 import { ParagrapheRedLineComponent } from './paragraphe-red-line/paragraphe-red-line.component';
@@ -21,6 +21,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { RexFormComponent } from './rex-form/rex-form.component';
 import { RexTimelineFormComponent } from './rex-timeline-form/rex-timeline-form.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { RexCapitalisationFormComponent } from './rex-capitalisation-form/rex-capitalisation-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatMenuModule} from '@angular/material/menu';
     RexTimelineVisuComponent,
     TableauComponent,
     RexFormComponent,
-    RexTimelineFormComponent
+    RexTimelineFormComponent,
+    RexCapitalisationFormComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,10 @@ import {MatMenuModule} from '@angular/material/menu';
     AppRoutingModule,
     NgxDatatableModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

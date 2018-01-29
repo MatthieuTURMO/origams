@@ -1,0 +1,39 @@
+<table>
+  <th>Numéro</th>
+  <th>Description</th>
+  <th>Généralisable</th>
+  <th>Suppression</th>
+  <tr *ngFor="let ligne of capital; let index = index;">
+    <td>{{ligne.numero}}</td>
+    <td>{{ligne.description}}</td>
+    <td>
+      <span *ngIf="ligne.generalisable">Oui</span>
+      <span *ngIf="!ligne.generalisable">Non</span>
+    </td>
+    <td>
+      <button mat-button (click)="supprimer(index)"><mat-icon>remove</mat-icon></button>
+    </td>
+  </tr>
+</table>
+
+<form *ngIf="showForm">  
+  <app-sous-sous-titre>Ajouter une entrée</app-sous-sous-titre>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Numéro" [(ngModel)]="nouvelleLigne.numero" name="numero" type="number">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Description" [(ngModel)]="nouvelleLigne.description" name="description" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Généralisable" name="generalisable" id="generalisable" [(ngModel)]="nouvelleLigne.generalisable">
+      <mat-option value=true>Oui</mat-option>
+      <mat-option value=false>Non</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button color="accent" type="button" (click)="submitEntree()"><mat-icon>check</mat-icon> Valider</button>
+  <button mat-button color="warn" type="button" (click)="annulerEntree()"><mat-icon>cancel</mat-icon> Annuler</button>
+</form>
+
+<div class="box-button">
+  <button *ngIf="!showForm" mat-raised-button color="primary" (click)="ajouterEntree();">Ajouter une entrée</button>
+</div>

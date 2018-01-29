@@ -1,0 +1,35 @@
+table  {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+th {
+    font-weight: 700;
+    color: var(--gris1);
+    text-align: left;
+    padding-right: 15px;
+}
+
+tr:nth-child(odd){
+    background-color : #d0cfd6;
+}
+
+td {
+    position: relative;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+form {
+    padding-top: 15px;
+}
+
+.box-button {
+    text-align: center;
+}
+
+mat-form-field {
+    width: 100%;
+}

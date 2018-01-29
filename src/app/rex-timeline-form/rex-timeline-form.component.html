@@ -4,7 +4,7 @@
   <th>Description</th>
   <th>Insertion</th>
   <tr *ngFor="let ligne of timeline; let index = index;">
-    <td>{{ligne.date}}</td>
+    <td [ngClass]="{'vert':ligne.etat==0, 'jaune':ligne.etat==1, 'rouge':ligne.etat==2}">{{ligne.date}}</td>
     <td>{{ligne.heure}}</td>
     <td>{{ligne.description}}</td>
     <td>
@@ -19,15 +19,27 @@
 </table>
 
 <form *ngIf="showForm">
-  <input [(ngModel)]="nouvelleLigne.date" name="date" type="text">
-  <input [(ngModel)]="nouvelleLigne.heure" name="heure" type="text">
-  <input [(ngModel)]="nouvelleLigne.description" name="description" type="text">
-  <select name="etat" id="etat" [(ngModel)]="nouvelleLigne.etat">
-    <option value=0>0</option>
-    <option value=1>1</option>
-    <option value=2>2</option>
-  </select>
-  <button type="button" (click)="onSubmit()">Ajouter</button>
+  <app-sous-sous-titre>Ajouter une entrée</app-sous-sous-titre>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Date" [(ngModel)]="nouvelleLigne.date" name="date" type="text">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Heure" [(ngModel)]="nouvelleLigne.heure" name="heure" type="text">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Description" [(ngModel)]="nouvelleLigne.description" name="description" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Etat" name="etat" id="etat" [(ngModel)]="nouvelleLigne.etat">
+      <mat-option value=0>Bon</mat-option>
+      <mat-option value=1>Moyen</mat-option>
+      <mat-option value=2>Mauvais</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button color="accent" type="button" (click)="submitEntree()"><mat-icon>check</mat-icon> Valider</button>
+  <button mat-button color="warn" type="button" (click)="annulerEntree()"><mat-icon>cancel</mat-icon> Annuler</button>
 </form>
 
-<button (click)="ajouterEntree(0);">Ajouter une entrée</button>
+<div class="box-button">
+  <button *ngIf="!showForm" mat-raised-button color="primary" (click)="ajouterEntree(0);">Ajouter une entrée</button>
+</div>
