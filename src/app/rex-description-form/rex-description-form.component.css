@@ -1,0 +1,37 @@
+.input_main, .input_comment {
+    margin: 10px 0;
+    padding: 12px;
+}
+
+.input_main {
+    width: 100%;
+}
+
+.input_comment {
+    width: 100%;
+}
+
+form div:nth-child(odd) {
+    float: left;
+}
+
+form div:nth-child(even) {
+    float: right;
+}
+
+form div {
+    width: 75%;
+    position: relative;
+}
+
+form div:nth-child(odd) > p {
+    position: absolute;
+    left : calc(100% + 10px);
+    top: 0%;
+}
+
+form div:nth-child(even) > p {
+    position: absolute;
+    right : calc(100% + 10px);
+    top: 0%;
+}

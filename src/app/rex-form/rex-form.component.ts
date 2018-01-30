@@ -7,60 +7,36 @@ import { DOCUMENT } from '@angular/platform-browser';
   styleUrls: ['./rex-form.component.css']
 })
 export class RexFormComponent implements OnInit {
-
-  private timeline_data = [
-    {
-      "etat": 0,
-      "heure": "12h",
-      "description": "Déploiement khkj",
-      "date": "07/07"
+  private description_detaillee_data = {
+    "description_incident": {
+      "main_comment": "commentaire principal",
+      "more_comments":
+        [{ "commentaire": "commentaire 1 desc", "auteur": "Jojo", "date": "12/02/2017" },
+        { "commentaire": "commentaire 2 desc", "auteur": "Juju", "date": "12/02/2017" }],
+      "new_comment": "",
     },
-    {
-      "etat": 1,
-      "heure": "12h",
-      "description": "Défzefezt khkj",
-      "date": "07/07"
+    "causes_incident": {
+      "main_comment": "commentaire principal cause",
+      "more_comments":
+        [{ "commentaire": "commentaire 1 descc", "auteur": "Jojo", "date": "12/02/2017" },
+        { "commentaire": "commentaire 2 descc", "auteur": "Jojo", "date": "12/02/2017" },
+        { "commentaire": "commentaire 3 descc", "auteur": "Juju", "date": "12/02/2017" }],
+      "new_comment": "",
     },
-    {
-      "etat": 2,
-      "heure": "12h",
-      "description": "aaaa khkj",
-      "date": "07/07"
+    "actions_contournement": {
+      "main_comment": "commentaire principal ac",
+      "more_comments":
+        [{ "commentaire": "commentaire 1 desccc", "auteur": "Jojo", "date": "12/02/2017" },
+        { "commentaire": "commentaire 2 desccc", "auteur": "Juju", "date": "12/02/2017" }],
+      "new_comment": "",
     },
-    {
-      "etat": 0,
-      "heure": "13h",
-      "description": "Après le correctif appliqué, tout est revenu à la normale.",
-      "date": "07/07"
+    "corrections_definitives": {
+      "main_comment": "commentaire principal cor",
+      "more_comments":
+        [{ "commentaire": "commentaire 1 descccc", "auteur": "Jojo", "date": "12/02/2017" }],
+      "new_comment": "",
     }
-  ]
-
-  private capitalisation_entete = [
-    "Numéro", "Description", "Généralisable"
-  ]
-
-  private capitalisation_data = [
-    {
-      "etat": 0,
-      "heure": "Nous capitalisons bien. Après le correctif appliqué, tout est revenu à la normale. Après le correctif appliqué, tout est revenu à la normale.",
-      "description": "Oui",
-    },
-    {
-      "etat": 1,
-      "heure": "Tout est ok",
-      "description": "Non",
-    },
-    {
-      "etat": 2,
-      "heure": "Faire un récapitulatif",
-      "description": "Oui",
-    },
-    {
-      "etat": 0,
-      "heure": "Retour à la normale.",
-      "description": "Oui",
-    }
-  ]
+  }
 
   private infos_data = {
     "date_incident": "19/10/2017",
@@ -93,13 +69,6 @@ export class RexFormComponent implements OnInit {
       "duree_incident": "20h",
       "frequence": "Rare"
     }
-  }
-
-  private description_detaillee_data = {
-    "description_incident": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem fuga totam deleniti sequi itaque facilis culpa ipsam natus similique suscipit modi voluptas officiis sunt amet, vero commodi ? Enim, perferendis possimus",
-    "causes_incident": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem fuga totam deleniti sequi itaque facilis culpa ipsam natus similique suscipit modi voluptas officiis sunt amet, vero commodi ? Enim, perferendis possimus",
-    "actions_contournement": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem fuga totam deleniti sequi itaque facilis culpa ipsam natus similique suscipit modi voluptas officiis sunt amet, vero commodi ? Enim, perferendis possimus",
-    "corrections_definitives": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem fuga totam deleniti sequi itaque facilis culpa ipsam natus similique suscipit modi voluptas officiis sunt amet, vero commodi ? Enim, perferendis possimus",
   }
 
   //la position des div de description et de timeLine, qui servira pour mettre en fixed la div de gauche d'informations

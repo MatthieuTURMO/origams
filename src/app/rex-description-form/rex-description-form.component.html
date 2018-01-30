@@ -1,0 +1,16 @@
+<app-sous-sous-titre-2><ng-content></ng-content></app-sous-sous-titre-2>
+<textarea disabled class="input_main" placeholder="Commentaire" [(ngModel)]="data.main_comment"
+  name="data.main_comment"></textarea>
+<app-paragraphe-red-line>
+  <p *ngIf="!showForm" class="text-rouge-2" (click)="toggleForm()">+ Afficher les commentaires</p>
+  <p *ngIf="showForm" class="text-rouge-2" (click)="toggleForm()">- Masquer les commentaires</p>
+  <form *ngIf="showForm">
+    <div *ngFor="let comment of data.more_comments ; let index = index">
+        <textarea disabled class="input_comment" [(ngModel)]="data.more_comments[index].commentaire" name="data-{{index}}"></textarea>
+        <p *ngIf="data.more_comments[index].auteur">Par {{ data.more_comments[index].auteur }} le {{ data.more_comments[index].date }}</p>
+    </div>
+    <div>
+        <textarea class="input_comment" [(ngModel)]="data.new_comment" name="data.new_comment"></textarea>
+    </div>
+  </form>
+</app-paragraphe-red-line>

@@ -22,6 +22,7 @@ import { RexFormComponent } from './rex-form/rex-form.component';
 import { RexTimelineFormComponent } from './rex-timeline-form/rex-timeline-form.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { RexCapitalisationFormComponent } from './rex-capitalisation-form/rex-capitalisation-form.component';
+import { RexDescriptionFormComponent } from './rex-description-form/rex-description-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RexCapitalisationFormComponent } from './rex-capitalisation-form/rex-ca
     TableauComponent,
     RexFormComponent,
     RexTimelineFormComponent,
-    RexCapitalisationFormComponent
+    RexCapitalisationFormComponent,
+    RexDescriptionFormComponent
   ],
   imports: [
     BrowserModule,

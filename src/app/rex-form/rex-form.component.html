@@ -1,5 +1,5 @@
 <app-navbar>REX</app-navbar>
-<app-titre-page>Visualisation REX n° 345</app-titre-page>
+<app-titre-page>Edition REX n° 345</app-titre-page>
 <app-titre-principal>CINKE-Programmation</app-titre-principal>
 
 <div id="infos-div" [ngClass]="{'fixed': fixed}">
@@ -79,23 +79,43 @@
     <table>
       <tr>
         <td>Nb utilisateurs</td>
-        <td>{{ indices_data.autres_indices.nb_utilisateurs }}</td>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput type="text" name="nb_utilisateurs" [(ngModel)]="indices_data.autres_indices.nb_utilisateurs">
+          </mat-form-field>
+        </td>
       </tr>
       <tr>
         <td>Sévérité</td>
-        <td>{{ indices_data.autres_indices.severite }}</td>
+        <td>
+            <mat-form-field class="full-width">
+              <input matInput type="text" name="severite" [(ngModel)]="indices_data.autres_indices.severite">
+            </mat-form-field>
+          </td>
       </tr>
       <tr>
         <td>Nb appels</td>
-        <td>{{ indices_data.autres_indices.nb_appels }}</td>
+        <td>
+            <mat-form-field class="full-width">
+              <input matInput type="text" name="nb_appels" [(ngModel)]="indices_data.autres_indices.nb_appels">
+            </mat-form-field>
+          </td>
       </tr>
       <tr>
         <td>Nb flags MySI</td>
-        <td>{{ indices_data.autres_indices.duree_incident }}</td>
+        <td>
+            <mat-form-field class="full-width">
+              <input matInput type="text" name="nb_flags_mysi" [(ngModel)]="indices_data.autres_indices.nb_flags_mysi">
+            </mat-form-field>
+          </td>
       </tr>
       <tr>
         <td>Fréquence</td>
-        <td>{{ indices_data.autres_indices.frequence }}</td>
+        <td>
+            <mat-form-field class="full-width">
+              <input matInput type="text" name="frequence" [(ngModel)]="indices_data.autres_indices.frequence">
+            </mat-form-field>
+          </td>
       </tr>
     </table>
   </app-carte>
@@ -105,17 +125,13 @@
 <div id="description-div" #description>
   <div class="col-67">
     <app-carte titre="Description détaillée">
-      <app-sous-sous-titre-2>Description de l'incident</app-sous-sous-titre-2>
-      <app-paragraphe-red-line>{{ description_detaillee_data.description_incident }}</app-paragraphe-red-line>
-      <app-sous-sous-titre-2>Causes de l'incident</app-sous-sous-titre-2>
-      <app-paragraphe-red-line>{{ description_detaillee_data.causes_incident }}</app-paragraphe-red-line>
-      <app-sous-sous-titre-2>Actions de contournement</app-sous-sous-titre-2>
-      <app-paragraphe-red-line>{{ description_detaillee_data.actions_contournement }}</app-paragraphe-red-line>
-      <app-sous-sous-titre-2>Corrections définitives</app-sous-sous-titre-2>
-      <app-paragraphe-red-line>{{ description_detaillee_data.corrections_definitives }}</app-paragraphe-red-line>
+      <app-rex-description-form [data]="description_detaillee_data.description_incident">Description de l'incident</app-rex-description-form>
+      <app-rex-description-form [data]="description_detaillee_data.causes_incident">Causes de l'incident</app-rex-description-form>
+      <app-rex-description-form [data]="description_detaillee_data.actions_contournement">Actions de contournement</app-rex-description-form>
+      <app-rex-description-form [data]="description_detaillee_data.corrections_definitives">Corrections définitives</app-rex-description-form>
     </app-carte>
     <app-carte titre="Capitalisation et axes d'améliorations">
-        <app-rex-capitalisation-form></app-rex-capitalisation-form>
+      <app-rex-capitalisation-form></app-rex-capitalisation-form>
     </app-carte>
   </div>
   <div class="col-33">
