@@ -2,6 +2,7 @@
 <app-titre-page>Edition REX n° 345</app-titre-page>
 <app-titre-principal>CINKE-Programmation</app-titre-principal>
 
+
 <div id="infos-div" [ngClass]="{'fixed': fixed}">
   <app-carte titre="Infos">
     <table>
@@ -81,41 +82,41 @@
         <td>Nb utilisateurs</td>
         <td>
           <mat-form-field class="full-width">
-            <input matInput type="text" name="nb_utilisateurs" [(ngModel)]="indices_data.autres_indices.nb_utilisateurs">
+            <input matInput type="number" name="nb_utilisateurs" [(ngModel)]="indices_data.autres_indices.nb_utilisateurs">
           </mat-form-field>
         </td>
       </tr>
       <tr>
         <td>Sévérité</td>
         <td>
-            <mat-form-field class="full-width">
-              <input matInput type="text" name="severite" [(ngModel)]="indices_data.autres_indices.severite">
-            </mat-form-field>
-          </td>
+          <mat-form-field class="full-width">
+            <input matInput type="text" name="severite" [(ngModel)]="indices_data.autres_indices.severite">
+          </mat-form-field>
+        </td>
       </tr>
       <tr>
         <td>Nb appels</td>
         <td>
-            <mat-form-field class="full-width">
-              <input matInput type="text" name="nb_appels" [(ngModel)]="indices_data.autres_indices.nb_appels">
-            </mat-form-field>
-          </td>
+          <mat-form-field class="full-width">
+            <input matInput type="number" name="nb_appels" [(ngModel)]="indices_data.autres_indices.nb_appels">
+          </mat-form-field>
+        </td>
       </tr>
       <tr>
         <td>Nb flags MySI</td>
         <td>
-            <mat-form-field class="full-width">
-              <input matInput type="text" name="nb_flags_mysi" [(ngModel)]="indices_data.autres_indices.nb_flags_mysi">
-            </mat-form-field>
-          </td>
+          <mat-form-field class="full-width">
+            <input matInput type="number" name="nb_flags_mysi" [(ngModel)]="indices_data.autres_indices.nb_flags_mysi">
+          </mat-form-field>
+        </td>
       </tr>
       <tr>
         <td>Fréquence</td>
         <td>
-            <mat-form-field class="full-width">
-              <input matInput type="text" name="frequence" [(ngModel)]="indices_data.autres_indices.frequence">
-            </mat-form-field>
-          </td>
+          <mat-form-field class="full-width">
+            <input matInput type="text" name="frequence" [(ngModel)]="indices_data.autres_indices.frequence">
+          </mat-form-field>
+        </td>
       </tr>
     </table>
   </app-carte>
@@ -133,6 +134,11 @@
     <app-carte titre="Capitalisation et axes d'améliorations">
       <app-rex-capitalisation-form></app-rex-capitalisation-form>
     </app-carte>
+    <div class="buttons-group">
+      <button mat-raised-button color="primary">Sauvegarder</button>
+      <button mat-raised-button color="accent">Valider</button>
+      <button mat-raised-button color="warn">Abandonner</button>
+    </div>
   </div>
   <div class="col-33">
     <app-carte titre="Timeline">

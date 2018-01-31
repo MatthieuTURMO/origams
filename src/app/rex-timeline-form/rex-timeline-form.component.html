@@ -8,7 +8,7 @@
     <td>{{ligne.heure}}</td>
     <td>{{ligne.description}}</td>
     <td>
-      <button mat-button [matMenuTriggerFor]="menu">...</button>
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>remove</mat-icon></button>
       <mat-menu #menu="matMenu">
         <button (click)="ajouterEntree(-1, index);" mat-menu-item>Insérer au-dessus</button>
         <button (click)="ajouterEntree(1, index);" mat-menu-item>Insérer au-dessous</button>

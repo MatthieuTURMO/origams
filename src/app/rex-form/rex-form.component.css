@@ -37,3 +37,12 @@ tr>td:nth-child(1) {
     float: right;
     padding-right: 10px;
 }
+
+#description-div button {
+    margin: 15px;
+}
+
+.buttons-group {
+    text-align: center;
+    width: 100%;
+}
